@@ -1,0 +1,68 @@
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>Cadastro produto</title>
+		<link rel="styLesheet" type="text/css" href="../css/bootstrap.min.css"></link>
+		<script src="../js/bootstrap.min.js"></script>
+		
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		type="text/css">
+	</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+	<a
+		class="navbar-brand" href="#" >
+		<img src="/images/download20210405112030.png" width = "100px" height= "10px">
+	</a>
+	</nav>
+	<form
+		action="/produto" method="POST"
+		class="form-horizontal" th:object="${produto}">
+		<input type= "hidden" th:field ="*{id}"></input>
+		<div
+			class="form-group row">
+			<label class="col-4 col-form-Label"
+			for="descricao">Descrição</label>
+			<div
+				class="col-8">
+				<input id="descricao" name="descricao" type="text" class="form-control"
+				required="required" th:field="*{descricao}"></input>
+			</div>
+		</div>
+				<div
+			class="form-group row">
+			<label class="col-4 col-form-Label"
+			for="marca">Marca</label>
+			<div
+				class="col-8">
+				<input id="marca" name="marca" type="text" class="form-control"
+				required="required" th:field="*{marca}"></input>
+			</div>
+		</div>
+		
+		<div
+			class="form-group row">
+			<label class="col-4 col-form-Label"
+			for="preco">Preço</label>
+			<div
+				class="col-8">
+				<input id="Preco" name="Preco" type="number" class="form-control"
+				required="required" th:field="*{preco}"></input>
+			</div>
+		</div>
+			
+		<div class="form-group row">
+			<div class="offset-4 col-8">
+				<button name="Salvar" type="submit" class="btn btn-primary">Salvar</button>
+			</div>
+		</div>
+		
+		<div class="col-md-6 col-lg-12 mdt-2">
+			<a href="/produto/pesquisa" class="btn btn-primary pull-right h2">Pesquisar Produto</a>
+		</div>
+	</form>
+</body>
+</html>
